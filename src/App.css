@@ -425,6 +425,10 @@
     padding: 2.75rem 1.5rem 3rem;
   }
 
+  .hero__nav ul {
+    justify-content: flex-start;
+  }
+
   .category-section {
     padding: 2rem 1.25rem 2.5rem;
   }
