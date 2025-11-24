@@ -5,10 +5,14 @@ const GiftCard = ({ gift, categoryTitle }) => {
     maximumFractionDigits: 0,
   })
 
+  const baseUrl = import.meta.env.BASE_URL
+  const photoPath = gift.photo.startsWith('/') ? gift.photo.slice(1) : gift.photo
+  const imageUrl = baseUrl + photoPath
+
   return (
     <article className="gift-card">
       <div className="gift-card__media">
-        <img src={gift.photo} alt={gift.name} loading="lazy" />
+        <img src={imageUrl} alt={gift.name} loading="lazy" />
         <span className="gift-card__store">{gift.store}</span>
       </div>
       <div className="gift-card__body">
