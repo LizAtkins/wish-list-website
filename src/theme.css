@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Syne:wght@500;600&display=swap');
+
+:root {
+  --bg: #fff5f8;
+  --bg-gradient: radial-gradient(circle at 15% 15%, rgba(255, 182, 255, 0.4), transparent 50%),
+    radial-gradient(circle at 80% 10%, rgba(157, 246, 255, 0.35), transparent 45%),
+    radial-gradient(circle at 50% 0%, rgba(255, 245, 165, 0.3), transparent 50%),
+    linear-gradient(180deg, #fff5f8, #fef0f5 45%, #fce8f0 100%);
+  --grid-color: rgba(255, 182, 255, 0.3);
+  --glow: rgba(255, 182, 255, 0.5);
+  --text: #2d1a3a;
+  --muted: #7a6a8f;
+  --card: rgba(255, 255, 255, 0.95);
+  --card-glow: rgba(255, 194, 248, 0.4);
+  --glass: rgba(255, 255, 255, 0.7);
+  --border: rgba(255, 182, 255, 0.4);
+  --blur: blur(28px);
+  --shadow-soft: 0 28px 80px rgba(255, 182, 255, 0.25);
+  --pink: #ffb6ff;
+  --aqua: #9df6ff;
+  --lemon: #fff5a5;
+  --lavender: #b2a4ff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--bg-gradient);
+  z-index: -2;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(transparent 95%, var(--grid-color) 95%),
+    linear-gradient(90deg, transparent 95%, var(--grid-color) 95%);
+  background-size: 60px 60px;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
